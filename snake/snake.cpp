@@ -37,7 +37,7 @@ vector<pair<int, int>> snakeBody;
 
 bool gameOver;
 
-void SetUP()
+void Setup()
 {
     srand(time(0));
 
@@ -55,7 +55,7 @@ void Draw()
 {
     system("cls");
 
-    cOUT << string(WIDTH + 2, BORDER) << endl;
+    cout << string(WIDTH + 2, BORDER) << endl;
 
     vector<vector<char>> gameField(HEIGHT, vector<char>(WIDTH, ' '));
 
@@ -66,14 +66,14 @@ void Draw()
 
     for (int y = 0; y < HEIGHT; y++)
     {
-        cOUT << BORDER;
+        cout << BORDER;
         for (int x = 0; x < WIDTH; x++)
         {
-            cOUT << gameField[y][x];
+            cout << gameField[y][x];
         }
-        cOUT << BORDER << endl;
+        cout << BORDER << endl;
     }
-    cOUT << string(WIDTH + 2, BORDER) << endl;
+    cout << string(WIDTH + 2, BORDER) << endl;
 }
 void Input()
 {
@@ -147,13 +147,13 @@ void Logic()
 
 int main()
 {
-    SetUP();
+    Setup();
     while (!gameOver)
     {
         Draw();
         Input();
         Logic();
     }
-    cOUT << FINAL_TABLE << endl;
+    cout << FINAL_TABLE << endl;
     return 0;
 }
